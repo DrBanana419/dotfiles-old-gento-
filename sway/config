@@ -1,0 +1,24 @@
+#This is the only relevant part of the config that I've changed:
+
+client.focused #b8bb26 #b8bb26   #fbf1c7 #fb4934
+client.unfocused #000000 #282828 #7c6f64
+
+#
+# Screen capture
+#
+set $ps1 Print
+set $ps2 Control+Print
+set $ps3 Alt+Print
+set $ps4 Alt+Control+Print
+
+bindsym $ps1 exec grim - | wl-copy
+bindsym $ps2 exec grim -g "$(slurp)" - | wl-copy
+bindsym $ps3 exec grim $(xdg-user-dir PICTURES)/ps_$(date +"%Y%m%d%H%M%S").png
+bindsym $ps4 exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/ps_$(date +"%Y%m
+%d%H%M%S").png
+
+
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Numix'
+    gsettings set $gnome-schema icon-theme 'Numix'
