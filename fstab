@@ -1,0 +1,3 @@
+/dev/sdb3	/boot/efi	vfat	defaults,noatime	0 2
+/dev/sdb6	none		swap	sw			0 0
+/dev/sdb7	/		btrfs	noatime,compress=zstd			0 1
